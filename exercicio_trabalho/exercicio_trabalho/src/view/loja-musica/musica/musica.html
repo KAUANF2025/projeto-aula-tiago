@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<meta charset="UTF-8">
+<title>Cadastro de Músicas</title>
+
+<style>
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body{
+        background:#f4f6f9;
+    }
+
+    header{
+        background:#1e293b;
+        padding:15px;
+    }
+
+    header ul{
+        display:flex;
+        list-style:none;
+        gap:20px;
+    }
+
+    header a{
+        color:white;
+        text-decoration:none;
+        font-weight:bold;
+    }
+
+    header li{
+        color:white;
+    }
+
+    main{
+        max-width:700px;
+        margin:40px auto;
+        background:white;
+        padding:30px;
+        border-radius:10px;
+        box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+        margin-bottom:20px;
+        color:#1e293b;
+    }
+
+    h2{
+        margin-top:30px;
+        margin-bottom:10px;
+        color:#1e293b;
+    }
+
+    fieldset{
+        border:1px solid #ccc;
+        border-radius:6px;
+        padding:15px;
+        margin-bottom:15px;
+    }
+
+    legend{
+        font-weight:bold;
+        padding:0 5px;
+    }
+
+    form div{
+        display:flex;
+        flex-direction:column;
+        margin-bottom:10px;
+    }
+
+    label{
+        margin-bottom:5px;
+        font-weight:bold;
+    }
+
+    input, select{
+        padding:10px;
+        border:1px solid #ccc;
+        border-radius:6px;
+        font-size:14px;
+    }
+
+    input:focus, select:focus{
+        outline:none;
+        border-color:#3b82f6;
+    }
+
+    button{
+        padding:10px;
+        border:none;
+        background:#3b82f6;
+        color:white;
+        font-size:15px;
+        border-radius:6px;
+        cursor:pointer;
+        transition:0.3s;
+        margin-top:5px;
+    }
+
+    button:hover{
+        background:#2563eb;
+    }
+
+    #btn-cancelar, #btn-novo{
+        background:#f97316;
+    }
+
+    #btn-cancelar:hover, #btn-novo:hover{
+        background:#ea580c;
+    }
+
+    #interpretes-container{
+        margin-top:10px;
+        padding:10px;
+        background:#f1f5f9;
+        border-radius:6px;
+    }
+
+    #lista-musicas{
+        margin-top:10px;
+        padding:10px;
+        background:#f1f5f9;
+        border-radius:6px;
+        min-height:40px;
+    }
+
+    #pesquisa{
+        padding:8px;
+        border:1px solid #ccc;
+        border-radius:6px;
+        width:60%;
+        margin-right:5px;
+    }
+
+</style>
+</head>
+
+<body>
+
+<header>
+<ul>
+<li><a href="menu.html">Home</a></li>
+<li>Cadastro de Músicas</li>
+</ul>
+</header>
+
+<main>
+
+<h1>Cadastro de Músicas</h1>
+
+<form id="form-musica">
+
+<fieldset>
+<legend>Dados da Música</legend>
+
+<div>
+<label>Nome da Música:</label>
+<input type="text" id="nome" name="nome" required>
+</div>
+
+<div>
+<label>Duração:</label>
+<input type="text" id="duracao" name="duracao" placeholder="00:00" required>
+</div>
+
+<div>
+<label>Data de Lançamento:</label>
+<input type="date" id="data_lancamento" name="data_lancamento" required>
+</div>
+
+<div>
+<label>Estilo:</label>
+<select id="estilo_id" name="estilo_id" required>
+<option value="">Selecione um estilo</option>
+</select>
+</div>
+
+</fieldset>
+
+<fieldset>
+<legend>Compositor</legend>
+
+<div>
+<label>Compositor:</label>
+<select id="compositor_id" name="compositor_id" required>
+<option value="">Selecione um compositor</option>
+</select>
+</div>
+
+</fieldset>
+
+<fieldset>
+<legend>Intérpretes</legend>
+
+<div>
+<select id="interprete_select">
+<option value="">Selecione um intérprete</option>
+</select>
+<button type="button" id="btn-adicionar-interprete">Adicionar</button>
+</div>
+
+<div id="interpretes-container">
+<h4>Intérpretes adicionados:</h4>
+<ul id="lista-interpretes-adicionados"></ul>
+</div>
+
+</fieldset>
+
+<fieldset>
+<legend>Disco e Gravadora</legend>
+
+<div>
+<label>Disco:</label>
+<select id="disco_id" name="disco_id">
+<option value="">Nenhum</option>
+</select>
+</div>
+
+<div>
+<label>Gravadora:</label>
+<input type="text" id="gravadora_nome" name="gravadora_nome" readonly placeholder="Selecione um disco">
+</div>
+
+</fieldset>
+
+<button type="submit">Salvar Música</button>
+<button type="button" id="btn-cancelar" style="display:none;">Cancelar</button>
+<button type="button" id="btn-novo">Nova Música</button>
+
+</form>
+
+<h2>Músicas Cadastradas</h2>
+
+<div>
+<input type="text" id="pesquisa" placeholder="Pesquisar música...">
+<button id="btn-pesquisar">Pesquisar</button>
+</div>
+
+<div id="lista-musicas"></div>
+
+</main>
+
+<script src="renderer.js"></script>
+
+</body>
+</html>

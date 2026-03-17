@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <header>
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+            <li>Calculadora</li>
+        </ul>
+    </header>
+    <main>
+        <h1>Calculadora</h1>
+        
+        <div id="visor">0</div>
+
+        <div>
+            <div>
+                <button onclick="clicarBtnValor('7')">7</button>
+                <button onclick="clicarBtnValor('8')">8</button>
+                <button onclick="clicarBtnValor('9')">9</button>
+
+                <button onclick="clicarBtnOperacao('DIV')">÷</button>
+            </div>
+            <div>
+                <button onclick="clicarBtnValor('4')">4</button>
+                <button onclick="clicarBtnValor('5')">5</button>
+                <button onclick="clicarBtnValor('6')">6</button>
+
+                <button onclick="clicarBtnOperacao('MUL')">x</button>
+            </div>
+            <div>
+                <button onclick="clicarBtnValor('1')">1</button>
+                <button onclick="clicarBtnValor('2')">2</button>
+                <button onclick="clicarBtnValor('3')">3</button>
+
+                <button onclick="clicarBtnOperacao('SUB')">-</button>
+            </div>
+            <div>
+                <button onclick="limpar()">C</button>
+                <button onclick="clicarBtnValor('0')">0</button>
+                <button onclick="executar()">=</button>
+
+                <button onclick="clicarBtnOperacao('SUM')">+</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="rendererCalculadora.js"></script>
+</body>
+</html>

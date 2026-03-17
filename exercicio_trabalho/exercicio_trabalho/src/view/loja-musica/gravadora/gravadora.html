@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Gravadoras</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f6f9;
+        }
+
+        header{
+            background:#1e293b;
+            padding:15px;
+        }
+
+        header ul{
+            display:flex;
+            list-style:none;
+            gap:20px;
+        }
+
+        header a{
+            color:white;
+            text-decoration:none;
+            font-weight:bold;
+        }
+
+        header li{
+            color:white;
+        }
+
+        main{
+            max-width:600px;
+            margin:40px auto;
+            background:white;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        h1{
+            margin-bottom:20px;
+            color:#1e293b;
+        }
+
+        h2{
+            margin-top:30px;
+            margin-bottom:10px;
+            color:#1e293b;
+        }
+
+        form div{
+            display:flex;
+            flex-direction:column;
+            margin-bottom:15px;
+        }
+
+        label{
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input{
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:6px;
+            font-size:14px;
+        }
+
+        input:focus{
+            outline:none;
+            border-color:#3b82f6;
+        }
+
+        button{
+            padding:10px;
+            border:none;
+            background:#3b82f6;
+            color:white;
+            font-size:15px;
+            border-radius:6px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        button:hover{
+            background:#2563eb;
+        }
+
+        #lista-gravadoras{
+            margin-top:10px;
+            padding:10px;
+            background:#f1f5f9;
+            border-radius:6px;
+            min-height:40px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <ul>
+            <li><a href="menu.html">Home</a></li>
+            <li>Cadastro de Gravadoras</li>
+        </ul>
+    </header>
+
+    <main>
+
+        <h1>Cadastro de Gravadoras</h1>
+        
+        <form id="form-gravadora">
+
+            <div>
+                <label for="nome">Informe o nome da gravadora:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+
+            <button type="submit">Salvar</button>
+
+        </form>
+
+        <h2>Gravadoras Cadastradas</h2>
+
+        <div id="lista-gravadoras"></div>
+
+    </main>
+
+    <script src="renderer.js"></script>
+
+</body>
+
+</html>
